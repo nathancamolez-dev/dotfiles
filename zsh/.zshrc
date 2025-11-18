@@ -130,7 +130,7 @@ source $ZSH/oh-my-zsh.sh
 #
 eval "$(starship init zsh)"
 
-alias dotfiles='nvim $(find ~/dotfiles -type f | fzf -m)'
+alias dotfiles='nvim $(find ~/dotfiles -type d -name ".git" -prune -o -type f -print | fzf -m)'
 
 
 alias vim='nvim'
