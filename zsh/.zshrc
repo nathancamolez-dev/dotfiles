@@ -6,19 +6,27 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # export PATH="$PATH:$(go env GOPATH)/bin"
 
+unalias cd 2>/dev/null
+
+eval "$(zoxide init zsh --cmd cd)"
+autoload -Uz compinit
+compinit
+
 if [ -n "$TMUX" ]; then
-    export TMUX_DIR=$(tmux display-message -p '#{pane_current_path}')
-
-    unfunction cd 2>/dev/null
-
+    # Capture the INITIAL tmux pane directory (when pane was created)
+    export TMUX_PANE_ROOT=$(tmux display-message -p '#{pane_current_path}')
+    
     cd() {
         if [ -n "$1" ]; then
-            builtin cd "$@"
+            # Has arguments: use zoxide for smart navigation
+            __zoxide_cd "$@"
         else
-            builtin cd "$TMUX_DIR"
+            # No arguments: return to the pane's root directory
+            builtin cd "$TMUX_PANE_ROOT"
         fi
     }
 fi
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
