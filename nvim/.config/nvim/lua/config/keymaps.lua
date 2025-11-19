@@ -15,6 +15,10 @@ local function set_mappings()
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
   vim.api.nvim_set_keymap('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+  vim.keymap.set('n', '<leader>b', function()
+    local current_buf = vim.api.nvim_buf_get_name(0)
+    require('mini.files').open(current_buf, true)
+  end, { desc = 'Open mini.files in the current buffer path' })
 
   -- Bind to move with zz align
   Map('n', 'J', 'mzJ`z')

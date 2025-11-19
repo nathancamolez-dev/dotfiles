@@ -600,6 +600,12 @@ require('lazy').setup({
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 
+      require('mini.files').setup {
+        mappings = {
+          go_in_plus = '<CR>',
+        },
+      }
+
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
@@ -704,5 +710,5 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 --NOTE:Set up the colorschemes
--- vim.cmd [[colorscheme oscura]]
-require 'custom.plugins.omarchy'
+vim.cmd [[colorscheme rose-pine-moon]]
+-- require 'custom.plugins.omarchy'

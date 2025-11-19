@@ -16,7 +16,7 @@ return {
 
   require 'custom.plugins.toggleterm',
 
-  require 'custom.plugins.yazi',
+  -- require 'custom.plugins.yazi',
 
   require 'custom.plugins.todo',
 }
