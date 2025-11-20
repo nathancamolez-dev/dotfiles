@@ -6,7 +6,8 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
-require('config.keymaps').setup()
+
+require('keymaps').setup()
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '

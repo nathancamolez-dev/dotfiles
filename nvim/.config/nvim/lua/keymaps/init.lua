@@ -76,6 +76,23 @@ local function set_mappings()
   vim.api.nvim_set_keymap('n', '<leader>im', [[<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<CR>]], { noremap = true, silent = true })
 end
 
+local show_dotfiles = true
+local toggle_dotfiles = function()
+  show_dotfiles = not show_dotfiles
+  local new_filter = show_dotfiles and function()
+    return true
+  end or function(fs_entry)
+    return not vim.startswith(fs_entry.name, '.')
+  end
+  require('mini.files').refresh { content = { filter = new_filter } }
+end
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MiniFilesBufferCreate',
+  callback = function(args)
+    vim.keymap.set('n', '.', toggle_dotfiles, { buffer = args.data.buf_id, desc = 'Toggle dotfiles' })
+  end,
+})
+
 return {
   setup = set_mappings,
 }
