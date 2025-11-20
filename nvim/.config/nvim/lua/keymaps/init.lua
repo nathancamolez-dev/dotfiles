@@ -10,6 +10,10 @@ local function set_mappings()
   vim.g.mapleader = ' '
   vim.g.maplocalleader = ' '
 
+  vim.keymap.set('n', 'Q', '<nop>')
+
+  vim.keymap.set('i', '<C-c>l', '<Esc>')
+
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -31,6 +35,8 @@ local function set_mappings()
   vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
   vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
+  -- Past without losing the clipboard
+  vim.keymap.set('x', '<leader>p', '"_dP')
   -- Auto indent on empty line.
   vim.keymap.set('n', 'i', function()
     return string.match(vim.api.nvim_get_current_line(), '%g') == nil and 'cc' or 'i'
