@@ -355,13 +355,6 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
-      vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-        pattern = '*.blade.php',
-        callback = function()
-          vim.bo.filetype = 'php'
-        end,
-      })
-
       local servers = {
         -- clangd = {},
         gopls = {},
@@ -370,13 +363,14 @@ require('lazy').setup({
         prismals = {},
         tailwindcss = {},
         yamlls = {},
-        emmet_language_server = { filetypes = { 'php' } },
+        emmet_language_server = { filetypes = { 'php', 'blade' } },
         intelephense = {
           capabilities = {},
           init_options = {
             configurationSection = {
               'html',
               'css',
+              'blade',
               'javascript',
             },
             embeddedLanguages = {
