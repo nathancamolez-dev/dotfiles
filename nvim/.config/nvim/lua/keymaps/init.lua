@@ -12,7 +12,7 @@ local function set_mappings()
 
   vim.keymap.set('n', 'Q', '<nop>')
 
-  vim.keymap.set('i', '<C-c>l', '<Esc>')
+  vim.keymap.set('i', '<C-c>', '<Esc>')
 
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
