@@ -14,7 +14,14 @@ return {
   { 'rebelot/kanagawa.nvim' },
 
   -- Nord
-  { 'EdenEast/nightfox.nvim' },
+  {
+    'EdenEast/nightfox.nvim',
+    config = function()
+      require('nightfox').setup {
+        options = { transparent = true },
+      }
+    end,
+  },
 
   -- Rose Pine
   { 'rose-pine/neovim', name = 'rose-pine' },
@@ -28,8 +35,8 @@ return {
   -- Mars
   { 'steve-lohmeyer/mars.nvim', name = 'mars' },
 
-  --Everblush
-  { 'Everblush/nvim', name = 'everblush' },
-
   { 'AlexvZyl/nordic.nvim' },
+
+  -- One dark Pro
+  { 'olimorris/onedarkpro.nvim' },
 }

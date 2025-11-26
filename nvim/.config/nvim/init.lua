@@ -718,5 +718,5 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 --NOTE:Set up the colorschemes
-vim.cmd [[colorscheme rose-pine-moon]]
--- require 'custom.plugins.omarchy'
+-- vim.cmd [[colorscheme rose-pine-moon]]
+require 'custom.plugins.omarchy'

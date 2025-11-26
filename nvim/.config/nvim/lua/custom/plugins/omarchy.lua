@@ -92,7 +92,7 @@ function M.get_colorscheme()
       end
     end
   end
-  return 'rose-pine-moon'
+  return 'duskfox'
 end
 
 function M.apply_colorscheme()
@@ -102,8 +102,8 @@ function M.apply_colorscheme()
     if ok then
       vim.notify('Applied colorscheme: ' .. colorscheme)
     else
-      vim.notify('Failed to apply colorscheme: ' .. colorscheme .. '. Applying fallback rose-pine-moon', vim.log.levels.WARN)
-      pcall(vim.cmd, 'colorscheme rose-pine-moon')
+      vim.notify('Failed to apply colorscheme: ' .. colorscheme .. '. Applying fallback duskfox', vim.log.levels.WARN)
+      pcall(vim.cmd, 'colorscheme duskfox')
     end
   end
 end
