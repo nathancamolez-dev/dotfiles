@@ -364,15 +364,7 @@ require('lazy').setup({
         tailwindcss = {},
         yamlls = {},
         emmet_language_server = { filetypes = { 'blade' } },
-        phpactor = {
-          cmd = { 'phpactor', 'language-server' },
-          filetypes = { 'php' },
-          root_dir = require('lspconfig.util').root_pattern('.git', 'composer.json'),
-          capabilities = {}, -- coloque as capabilities que você estiver usando
-          init_options = {
-            ['language_server_phpstan.enabled'] = true, -- opcional, ativa phpstan
-          },
-        },
+        phpactor = {},
 
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
