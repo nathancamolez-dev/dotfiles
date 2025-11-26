@@ -363,21 +363,14 @@ require('lazy').setup({
         prismals = {},
         tailwindcss = {},
         yamlls = {},
-        emmet_language_server = { filetypes = { 'php', 'blade' } },
-        laravel_ls = { filetypes = { 'blade' } },
-        intelephense = {
-          capabilities = {},
+        emmet_language_server = { filetypes = { 'blade' } },
+        phpactor = {
+          cmd = { 'phpactor', 'language-server' },
+          filetypes = { 'php' },
+          root_dir = require('lspconfig.util').root_pattern('.git', 'composer.json'),
+          capabilities = {}, -- coloque as capabilities que você estiver usando
           init_options = {
-            configurationSection = {
-              'html',
-              'css',
-              'blade',
-              'javascript',
-            },
-            embeddedLanguages = {
-              css = true,
-              javascript = true,
-            },
+            ['language_server_phpstan.enabled'] = true, -- opcional, ativa phpstan
           },
         },
 
