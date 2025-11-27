@@ -1,5 +1,7 @@
 return {
 
+  require 'custom.plugins.snack-picker',
+
   require 'custom.plugins.opencode',
 
   require 'custom.plugins.colorschemes',

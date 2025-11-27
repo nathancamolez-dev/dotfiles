@@ -7,7 +7,14 @@ function M.apply()
     bold = true,
     italic = true,
   })
+
   vim.api.nvim_set_hl(0, 'TelescopeMatching', {
+    fg = '#ff995e',
+    italic = true,
+    bold = true,
+  })
+
+  vim.api.nvim_set_hl(0, 'SnacksPickerMatch', {
     fg = '#ff995e',
     italic = true,
     bold = true,
