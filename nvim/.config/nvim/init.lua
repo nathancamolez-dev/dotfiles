@@ -74,7 +74,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end,
 })
 
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -363,11 +362,11 @@ require('lazy').setup({
         unocss = {},
         prismals = {},
         tailwindcss = {},
+        biome = { filetypes = { 'json' } },
         yamlls = {},
         html = { filetypes = { 'blade' } },
         emmet_language_server = { filetypes = { 'blade' } },
-        phpactor = {},
-
+        intelephense = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -609,6 +608,7 @@ require('lazy').setup({
       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
+      require('mini.pick').setup()
 
       require('mini.files').setup {
         mappings = {

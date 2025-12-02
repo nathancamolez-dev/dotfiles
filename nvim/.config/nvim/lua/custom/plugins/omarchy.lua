@@ -92,7 +92,7 @@ function M.get_colorscheme()
       end
     end
   end
-  return 'catppuccin-mocha'
+  return 'carbonfox'
 end
 
 function M.apply_colorscheme()
@@ -102,8 +102,8 @@ function M.apply_colorscheme()
     if ok then
       vim.notify('Applied colorscheme: ' .. colorscheme)
     else
-      vim.notify('Failed to apply colorscheme: ' .. colorscheme .. '. Applying fallback catppuccin-mocha', vim.log.levels.WARN)
-      pcall(vim.cmd, 'colorscheme catppuccin-mocha')
+      vim.notify('Failed to apply colorscheme: ' .. colorscheme .. '. Applying fallback carbonfox', vim.log.levels.WARN)
+      pcall(vim.cmd, 'colorscheme carbonfox')
     end
   end
 end
